@@ -24,5 +24,55 @@ namespace Reproductor
         {
             InitializeComponent();
         }
+
+        private bool pausado = false;
+
+        private void playBoton_Click(object sender, RoutedEventArgs e)
+        {
+            reproductorMediaElement.Play();   
+        }
+
+        private void reanudarBoton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!pausado)
+            {
+                reproductorMediaElement.Pause();
+                pausado = true;
+            }
+            else
+            {
+                reproductorMediaElement.Play();
+                pausado = false;
+            }
+        }
+
+        private void stopBoton_Click(object sender, RoutedEventArgs e)
+        {
+            reproductorMediaElement.Stop();
+            reproductorMediaElement.Close();
+        }
+
+        private void mediaRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (e.OriginalSource == trailer1RadioButton)
+            {
+                reproductorMediaElement.Close();
+                reproductorMediaElement.Source = new Uri(@"F:\2 DAM\DI\Tema 2\Ejercicios\Reproductor\Reproductor\Reproductor\trailer1.mp4");
+            }
+            else
+            {
+                reproductorMediaElement.Close();
+                reproductorMediaElement.Source = new Uri(@"F:\2 DAM\DI\Tema 2\Ejercicios\Reproductor\Reproductor\Reproductor\trailer2.mp4");
+            }
+
+        }
+
+        private void silenciarCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if(silenciarCheckBox.IsChecked.Value)
+                reproductorMediaElement.Volume = 0;
+            else
+                 reproductorMediaElement.Volume = 50;
+        }
     }
 }

@@ -7,18 +7,22 @@
         mc:Ignorable="d"
         Title="Reproductor Multimedia" Height="450" Width="800">
 
-    <DockPanel LastChildFill="true" >
-        <RadioButton DockPanel.Dock="Bottom">Silenciar</RadioButton>
-        <WrapPanel DockPanel.Dock="Right" Orientation="Vertical">
-            <Button>Play</Button>
-            <Button>Play</Button>
-            <Button>Play</Button>
-            <StackPanel Orientation="vertical">
-                <RadioButton>Trailer 1</RadioButton>
-                <RadioButton>Trailer 2</RadioButton>
+    <DockPanel LastChildFill="true">
+        <CheckBox x:Name="silenciarCheckBox" DockPanel.Dock="Bottom" Margin="5" Checked="silenciarCheckBox_Checked" Indeterminate="silenciarCheckBox_Checked" Unchecked="silenciarCheckBox_Checked">Silenciar</CheckBox>
+        <StackPanel DockPanel.Dock="Right" Orientation="Vertical">
+            <StackPanel>
+                <Button x:Name="playBoton" Margin="5" Click="playBoton_Click">Play</Button>
+                <Button x:Name="reanudarBoton" Margin="5" Click="reanudarBoton_Click">Reanudar</Button>
+                <Button x:Name="stopBoton" Margin="5" Click="stopBoton_Click">Stop</Button>
             </StackPanel>
-        </WrapPanel> 
-        <MediaElement LoadedBehavior="Manual"/>
+            <StackPanel >
+                <RadioButton x:Name="trailer1RadioButton" Margin="5" Checked="mediaRadioButton_Checked">Trailer 1</RadioButton>
+                <RadioButton x:Name="trailer2RadioButton" Margin="5" Checked="mediaRadioButton_Checked">Trailer 2</RadioButton>
+            </StackPanel>
+        </StackPanel>
+        <Border BorderBrush="Blue" Margin="5" BorderThickness="2">
+            <MediaElement x:Name="reproductorMediaElement" LoadedBehavior="Manual"/>
+        </Border>
     </DockPanel>
 
 </Window>

@@ -100,5 +100,9 @@
   <ItemGroup>
     <Resource Include="social_media_logo_video_player_icon-icons.com_56665.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="trailer1.mp4" />
+    <Content Include="trailer2.mp4" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
