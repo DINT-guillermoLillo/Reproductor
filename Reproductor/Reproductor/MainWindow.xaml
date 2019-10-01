@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Reproductor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Reproductor Multimedia" Height="450" Width="800">
+
+    <DockPanel LastChildFill="true" >
+        <RadioButton DockPanel.Dock="Bottom">Silenciar</RadioButton>
+        <WrapPanel DockPanel.Dock="Right" Orientation="Vertical">
+            <Button>Play</Button>
+            <Button>Play</Button>
+            <Button>Play</Button>
+            <StackPanel Orientation="vertical">
+                <RadioButton>Trailer 1</RadioButton>
+                <RadioButton>Trailer 2</RadioButton>
+            </StackPanel>
+        </WrapPanel> 
+        <MediaElement LoadedBehavior="Manual"/>
+    </DockPanel>
+
 </Window>
