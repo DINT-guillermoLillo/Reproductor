@@ -48,31 +48,27 @@ namespace Reproductor
 
         private void stopBoton_Click(object sender, RoutedEventArgs e)
         {
-            reproductorMediaElement.Stop();
             reproductorMediaElement.Close();
         }
 
         private void mediaRadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            if (e.OriginalSource == trailer1RadioButton)
-            {
-                reproductorMediaElement.Close();
-                reproductorMediaElement.Source = new Uri(@"E:\2 DAM\DI\Tema 2\Ejercicios\Reproductor\Reproductor\Reproductor\trailer1.mp4");
-            }
-            else
-            {
-                reproductorMediaElement.Close();
-                reproductorMediaElement.Source = new Uri(@"E:\2 DAM\DI\Tema 2\Ejercicios\Reproductor\Reproductor\Reproductor\trailer2.mp4");
-            }
+            reproductorMediaElement.Close();
 
+            if (e.OriginalSource == trailer1RadioButton)
+                reproductorMediaElement.Source = new Uri(@"E:\2 DAM\DI\Tema 2\Ejercicios\Reproductor\Reproductor\Reproductor\trailer1.mp4");
+            
+            else
+                reproductorMediaElement.Source = new Uri(@"E:\2 DAM\DI\Tema 2\Ejercicios\Reproductor\Reproductor\Reproductor\trailer2.mp4");
+            
         }
 
         private void silenciarCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            if(silenciarCheckBox.IsChecked.Value)
-                reproductorMediaElement.Volume = 0;
+            if (silenciarCheckBox.IsChecked.Value)
+                reproductorMediaElement.IsMuted = true;
             else
-                 reproductorMediaElement.Volume = 50;
+                reproductorMediaElement.IsMuted = false;
         }
     }
 }
