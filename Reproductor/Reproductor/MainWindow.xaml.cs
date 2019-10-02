@@ -57,12 +57,12 @@ namespace Reproductor
             if (e.OriginalSource == trailer1RadioButton)
             {
                 reproductorMediaElement.Close();
-                reproductorMediaElement.Source = new Uri(@"F:\2 DAM\DI\Tema 2\Ejercicios\Reproductor\Reproductor\Reproductor\trailer1.mp4");
+                reproductorMediaElement.Source = new Uri(@"E:\2 DAM\DI\Tema 2\Ejercicios\Reproductor\Reproductor\Reproductor\trailer1.mp4");
             }
             else
             {
                 reproductorMediaElement.Close();
-                reproductorMediaElement.Source = new Uri(@"F:\2 DAM\DI\Tema 2\Ejercicios\Reproductor\Reproductor\Reproductor\trailer2.mp4");
+                reproductorMediaElement.Source = new Uri(@"E:\2 DAM\DI\Tema 2\Ejercicios\Reproductor\Reproductor\Reproductor\trailer2.mp4");
             }
 
         }
